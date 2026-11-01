@@ -23,7 +23,18 @@ npm run build
 npm start
 ```
 
-`npm start` écoute sur `0.0.0.0` et respecte la variable `PORT` de l'hébergeur (ne plus forcer 3010). Définir aussi `HOSTNAME=0.0.0.0` si le conteneur reste « en démarrage » alors que Next affiche Ready. Health check : `GET /api/health`.
+Le build produit le mode `standalone`. `npm start` lance `node .next/standalone/server.js`.
+
+Sur l'hébergeur (Hostinger / railpack), définir :
+
+| Variable | Valeur |
+| --- | --- |
+| `HOSTNAME` | `0.0.0.0` |
+| `PORT` | laisser celle de la plateforme (souvent `3000`) |
+| `NEXT_PUBLIC_SITE_URL` | URL publique HTTPS, sans slash final |
+| `OW_AUTH_SECRET` | secret ≥ 32 caractères |
+
+Health check : `GET /api/health`. Le Dockerfile du dépôt force déjà `HOSTNAME=0.0.0.0` et le port `3000`.
 
 ## Pages
 
