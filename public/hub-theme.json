@@ -1,0 +1,31 @@
+{
+  "theme": "default",
+  "updatedAt": null,
+  "discordUrl": "https://discord.gg/hWgakkRBcc",
+  "sites": {
+    "omnaworks": {
+      "theme": "default",
+      "themeSource": "global",
+      "adsEnabled": false,
+      "analyticsEnabled": true,
+      "urlImportEnabled": true,
+      "discordEnabled": true
+    },
+    "audiova": {
+      "theme": "default",
+      "themeSource": "global",
+      "adsEnabled": false,
+      "analyticsEnabled": true,
+      "urlImportEnabled": true,
+      "discordEnabled": true
+    },
+    "videova": {
+      "theme": "default",
+      "themeSource": "global",
+      "adsEnabled": false,
+      "analyticsEnabled": true,
+      "urlImportEnabled": true,
+      "discordEnabled": true
+    }
+  }
+}

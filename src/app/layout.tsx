@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist_Mono, Manrope } from "next/font/google";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { ThemeSync } from "@/components/theme-sync";
 import { getSiteUrl } from "@/lib/site";
 import { studio } from "@/lib/studio";
 import "./globals.css";
@@ -51,7 +52,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fr" className={`${manrope.variable} ${geistMono.variable} h-full antialiased`}>
+    <html lang="fr" data-theme="default" className={`${manrope.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="min-h-full bg-canvas font-sans text-ink">
         <div className="atmosphere pointer-events-none fixed inset-0 z-0" aria-hidden="true" />
         <a
@@ -61,6 +62,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           Aller au contenu
         </a>
         <div className="relative z-10">
+          <ThemeSync />
           <Header />
           <div id="contenu">{children}</div>
           <Footer />

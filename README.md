@@ -47,6 +47,21 @@ Health check : `GET /api/health`. Le Dockerfile du dépôt force déjà `HOSTNAM
 
 Logo : `public/brand/omnaworks-mark.svg`. Les prénoms se ajoutent dans `src/lib/studio.ts` (`people`).
 
+## Hub (thèmes & config partagés)
+
+Une seule source pour Omnaworks, Audiova et Videova :
+
+| Méthode | URL | Rôle |
+| --- | --- | --- |
+| GET | `/api/hub` | Snapshot complet + catalogue |
+| GET | `/api/hub/theme` | Thème global |
+| GET | `/api/hub/sites/audiova` | Config résolue Audiova |
+| GET | `/api/hub/sites/videova` | Config résolue Videova |
+| GET | `/hub-theme.json` | Miroir public |
+| UI | `/hub` | Changer le thème (compte requis) |
+
+Sur chaque site produit, définir `NEXT_PUBLIC_OW_HUB_URL=https://ton-omnaworks` puis lire `/api/hub/sites/<id>`.
+
 ## Vérifier
 
 ```powershell
