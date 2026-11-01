@@ -12,3 +12,7 @@ npm-debug.log*
 *.tsbuildinfo
 next-env.d.ts
 
+
+start-out.txt
+start-err.txt
+
