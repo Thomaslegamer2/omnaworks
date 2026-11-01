@@ -16,6 +16,15 @@ Ouvrir [http://localhost:3010](http://localhost:3010).
 
 `NEXT_PUBLIC_SITE_URL` (voir `.env.example`) sert au canonical et au sitemap.
 
+## Production
+
+```powershell
+npm run build
+npm start
+```
+
+`npm start` écoute sur `0.0.0.0` et respecte la variable `PORT` de l'hébergeur (ne plus forcer 3010). Définir aussi `HOSTNAME=0.0.0.0` si le conteneur reste « en démarrage » alors que Next affiche Ready. Health check : `GET /api/health`.
+
 ## Pages
 
 - `/` accueil
